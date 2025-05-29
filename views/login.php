@@ -1,15 +1,24 @@
-<?php include '../includes/header.php'; ?>
-<div class="form-container">
-    <h2>Đăng Nhập</h2>
-    <form action="#" method="post" class="auth-form">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
 
-        <label for="password">Mật khẩu:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Đăng nhập</button>
-        <p>Chưa có tài khoản? <a href="register.php">Đăng ký</a></p>
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Đăng nhập</h2>
+    <form method="post" action="">
+      <input type="text" name="username" placeholder="Tên đăng nhập" required>
+      <input type="password" name="password" placeholder="Mật khẩu" required>
+      <button type="submit">Đăng nhập</button>
     </form>
-</div>
-<?php include '../includes/footer.php'; ?>
+    <p>Bạn chưa có tài khoản? <a href="register.php">Đăng ký</a></p>
+  </div>
+</body>
+</html>
+

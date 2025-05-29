@@ -44,3 +44,63 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+  const userIcon = document.getElementById("userIcon");
+  const modal = document.getElementById("authModal");
+  const closeBtn = document.querySelector(".close");
+  const loginTab = document.getElementById("loginTab");
+  const registerTab = document.getElementById("registerTab");
+  const loginForm = document.getElementById("loginForm");
+  const registerForm = document.getElementById("registerForm");
+
+  userIcon.onclick = () => modal.style.display = "block";
+  closeBtn.onclick = () => modal.style.display = "none";
+  window.onclick = e => { if (e.target == modal) modal.style.display = "none"; }
+
+  loginTab.onclick = () => {
+    loginForm.style.display = "block";
+    registerForm.style.display = "none";
+  };
+
+  registerTab.onclick = () => {
+    loginForm.style.display = "none";
+    registerForm.style.display = "block";
+  };
+
+function openSizeGuide() {
+  document.getElementById("sizeGuideModal").style.display = "block";
+}
+
+function closeSizeGuide() {
+  document.getElementById("sizeGuideModal").style.display = "none";
+}
+
+// Đóng khi click ra ngoài vùng modal
+window.onclick = function(event) {
+  const modal = document.getElementById("sizeGuideModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.querySelector(".toggle-guide-btn");
+  const contentBox = document.querySelector(".guide-hotline-wrapper");
+
+  toggleBtn.addEventListener("click", function () {
+    contentBox.style.display =
+      contentBox.style.display === "none" || contentBox.style.display === ""
+        ? "block"
+        : "none";
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleBtn = document.querySelector('.toggle-btn');
+  const content = document.querySelector('.guide-content');
+
+  toggleBtn.addEventListener('click', () => {
+    const isVisible = content.style.display === 'block';
+    content.style.display = isVisible ? 'none' : 'block';
+    toggleBtn.textContent = isVisible ? '+' : '-';
+  });
+});

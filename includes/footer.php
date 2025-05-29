@@ -3,11 +3,11 @@
   <div class="footer-container">
     <!-- Logo + Thông tin cửa hàng -->
     <div class="footer-column">
-      <img src="../assets/images/logo1.png" alt="XShop Logo" class="footer-logo">
-      <p><strong>Hệ thống giày thể thao số 1 Hà Nội</strong></p>
+      <img src="../assets/images/logo.jpg" alt="XShop Logo" class="footer-logo">
+      <p><strong>Hệ thống giày thể thao số 1 TP.Hồ Chí Minh</strong></p>
       <p>Hotline: <a href="tel:0975671080">097.567.1080</a></p>
-      <p>Store 1: 57 Quan Hoa, Cầu Giấy, HN</p>
-      <p>Store 2: 29 Trần Đại Nghĩa, Hai Bà Trưng, HN</p>
+      <p>Store 1: 732 Tân Kỳ Tân Qúy, Bình Tân, Tp.Hồ Chí Minh </p>
+      <p>Store 2: 28 Ngô Quang Huy, Thủ Đức, Tp.Hồ Chí Minh</p>
     </div>
     <!-- Cột Hỗ trợ -->
     <div class="footer-column">
@@ -35,7 +35,7 @@
 
     <!-- Facebook Fanpage -->
     <div class="footer-column">
-      <h4>XSHOP TRÊN FACEBOOK</h4>
+      <h4>GenZSHOP TRÊN FACEBOOK</h4>
       <iframe 
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fxshop02&tabs=timeline&width=250&height=200&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
         width="250" height="200" style="border:none;overflow:hidden" scrolling="no" frameborder="0"

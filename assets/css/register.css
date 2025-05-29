@@ -1,51 +1,83 @@
-.form-container {
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* register.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.form-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+body {
+  background: linear-gradient(135deg, #16a085, #2ecc71);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.auth-form {
-    display: flex;
-    flex-direction: column;
+.auth-container {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
 }
 
-.auth-form label {
-    margin-top: 10px;
-    font-weight: bold;
+.auth-container h2 {
+  margin-bottom: 24px;
+  color: #333;
+  font-size: 24px;
 }
 
-.auth-form input {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+.auth-container form {
+  display: flex;
+  flex-direction: column;
 }
 
-.auth-form button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #000;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+.auth-container input[type="text"],
+.auth-container input[type="email"],
+.auth-container input[type="password"] {
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s ease;
 }
 
-.auth-form button:hover {
-    background-color: #333;
+.auth-container input:focus {
+  border-color: #16a085;
+  outline: none;
 }
 
-.auth-form p {
-    margin-top: 15px;
-    text-align: center;
+.auth-container button {
+  padding: 12px;
+  background-color: #16a085;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-container button:hover {
+  background-color: #12876f;
+}
+
+.auth-container p {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #444;
+}
+
+.auth-container a {
+  color: #16a085;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
 }

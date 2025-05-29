@@ -1,35 +1,28 @@
 <header class="main-header">
   <div class="logo">
-    <img src="../assets/images/logo.png" alt="XShop Logo">
+    <img src="../assets/images/logo.jpg" alt="GenZShop Logo">
   </div>
-
   <div class="nav">
   <ul class="nav-links">
     <li class="menu-item">
-      <a href="#">NIKE</a>
+      <a href="#">GIÀY</a>
       <ul class="submenu">
-        <li><a href="#">Air Force 1</a></li>
-        <li><a href="#">Nike Jordan</a></li>
-        <li><a href="#">Nike SB Force 58</a></li>
-        <li><a href="#">Nike Dunk</a></li>
-        <li><a href="#">M2K</a></li>
-        <li><a href="#">Nike Fashion</a></li>
-        <li><a href="#">ONLINE GIÁ SỐC</a></li>
+        <li><a href="#">Adidas</a></li>
+        <li><a href="#">Samba</a></li>
+        <li><a href="#">Nike</a></li>
+        <li><a href="#">Puma</a></li>
       </ul>
     </li>
 
-    <li class="menu-item">
-      <a href="#">ADIDAS</a>
+    <li class="menu-item">  
+      <a href="#">DÉP</a>
       <ul class="submenu">
-        <li><a href="#">Alpha Bounce</a></li>
-        <li><a href="#">Centennial 85</a></li>
-        <li><a href="#">Forum</a></li>
-        <li><a href="#">Samba + Campus</a></li>
-        <li><a href="#">Yeezy Boost</a></li>
-        <li><a href="#">Adidas Fashion</a></li>
+         <li><a href="#">Adidas</a></li>
+        <li><a href="#">Samba</a></li>
+        <li><a href="#">Nike</a></li>
+        <li><a href="#">Puma</a></li>
       </ul>
     </li>
-
     <li class="menu-item">
       <a href="#">HÃNG KHÁC</a>
       <ul class="submenu">
@@ -46,9 +39,12 @@
       </ul>
       </ul>
   </div>
-
   <div class="nav-icons">
+    <a href="login.php">
+  <i class="fa-solid fa-user-circle fa-2x " style=" cursor: pointer;"></i>
+    </a>
     <a href="#"><i class="fa-solid fa-magnifying-glass fa-2x"></i></a>
-    <a href="#"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+    <a href="checkout.php">
+      <i class="fa-solid fa-cart-shopping fa-2x"></i></a>
   </div>
 </header>
