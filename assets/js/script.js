@@ -104,3 +104,15 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleBtn.textContent = isVisible ? '+' : '-';
   });
 });
+
+function openModal(id) {
+  document.getElementById(id).style.display = "block";
+  document.body.style.overflow = "hidden"; // Không cho cuộn trang nền
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+

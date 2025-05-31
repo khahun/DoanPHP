@@ -22,16 +22,17 @@
 
     <!-- Cột Thông tin -->
     <div class="footer-column">
-      <h4>THÔNG TIN</h4>
-      <ul>
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Hướng dẫn đặt hàng</a></li>
-        <li><a href="#">Chính sách đổi hàng</a></li>
-        <li><a href="#">Bảo mật</a></li>
-        <li><a href="#">Liên hệ</a></li>
-        <li><a href="#">Hệ thống cửa hàng</a></li>
-      </ul>
-    </div>
+  <h4>THÔNG TIN</h4>
+<ul>
+  <li><a href="javascript:void(0);" onclick="openModal('modalGioiThieu')">Giới thiệu</a></li>
+  <li><a href="javascript:void(0);" onclick="openModal('modalHuongDan')">Hướng dẫn đặt hàng</a></li>
+  <li><a href="javascript:void(0);" onclick="openModal('modalBaoMat')">Bảo mật</a></li>
+  <li><a href="javascript:void(0);" onclick="openModal('modalLienHe')">Liên hệ</a></li>
+  <li><a href="javascript:void(0);" onclick="openModal('modalChinhsach')">Chính sách đổi hàng</a></li>
+  <li><a href="javascript:void(0);" onclick="openModal('modalHethong')">Hệ thống cửa hàng</a></li>
+</ul>
+</div>
+
 
     <!-- Facebook Fanpage -->
     <div class="footer-column">

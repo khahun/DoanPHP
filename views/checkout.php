@@ -6,6 +6,7 @@
 </head>
 <body>
 <?php include('../includes/header.php'); ?>
+
 <link rel="stylesheet" href="../assets/css/style.css">
 <div class="checkout-container">
     <h2>Thanh toán</h2>

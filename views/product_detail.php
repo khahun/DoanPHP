@@ -62,8 +62,6 @@ foreach ($images as $img) {
 }
 ?>
 </div>
-
-
         </div>
         <div class="right-column">
             <h1><?= $product['TenSP'] ?></h1>
@@ -86,7 +84,6 @@ foreach ($images as $img) {
                 <?php endforeach; ?>
                
 </div>
-
             <button class="buy-btn">MUA NGAY</button>
             <p class="desc"><?= $product['MoTa'] ?></p>
 
@@ -94,7 +91,6 @@ foreach ($images as $img) {
 <div style="text-align: right; margin-top: 10px;">
   <a href="javascript:void(0);" onclick="openSizeGuide()" style="color: red; border: 2px solid red; padding: 5px 10px; text-decoration: none; border-radius: 5px;">HD cách chọn size giày</a>
 </div>
-
         </div>
     </div>
    
@@ -107,6 +103,5 @@ foreach ($images as $img) {
   </div>
 </div>
 <script src="../assets/js/script.js"></script>
-
 </body>
 </html>

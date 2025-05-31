@@ -9,7 +9,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background-color: white;
+    background-color:white;
     position:relative;
     top: 0;
     z-index: 100;
@@ -45,8 +45,6 @@ body {
   display: block;
   position: relative;
 }
-
-/* Gạch dưới khi active/hover */
 .nav a::after {
   content: "";
   display: block;
@@ -61,8 +59,6 @@ body {
   transform: scaleX(1);
   
 }
-
-/* Submenu */
 .submenu {
   display: none;
   position: absolute;
@@ -188,39 +184,94 @@ width: 100px;
     color: red;
 }
 
+/* Container danh sách sản phẩm */
 .product-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+    gap: 24px;
     justify-content: center;
+    padding: 20px;
 }
 
+/* Card sản phẩm */
 .product-card {
-    width: 200px;
+    width: 220px;
+    background-color: #fff;
     border: 1px solid #eee;
-    padding: 10px;
-    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
     text-align: center;
+    padding: 16px;
 }
 
-.discount-tag {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    background: lightgreen;
-    padding: 2px 6px;
-    font-size: 12px;
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Ảnh sản phẩm */
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Tên sản phẩm */
+.product-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #4a148c;
+    line-height: 1.4;
+}
+
+.product-card h3 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Giá sản phẩm */
+.product-card .price {
+    font-size: 14px;
+    color: #e53935;
     font-weight: bold;
 }
 
-.product-card img {
-    width: 100%;
+/* Hiệu ứng SALE góc trên bên trái */
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #e53935;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    animation: pulse 1.5s infinite;
 }
 
-.product-price del {
-    color: #888;
+/* Animation nhấp nháy nhẹ */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
 }
+
+/* Đảm bảo card có position để badge hiển thị đúng */
+.product-card {
+    position: relative;
+}
+
 .nav-icons {
     display: flex;
     height: 20px;
@@ -821,4 +872,144 @@ html, body {
   border-radius: 5px;
   border: 1px solid #ccc;
   cursor: pointer;
+}
+.modal-info {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-info-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 600px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sidebar {
+    width: 220px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar h3 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: #222;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+}
+
+/* Filter bar */
+.filter-bar {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-bar label {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.filter-bar select {
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Product list */
+.product-list1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.product strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.product p,
+.product span {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #555;
 }

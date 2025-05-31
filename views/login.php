@@ -10,6 +10,7 @@ session_start();
   <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 <body>
+
   <div class="auth-container">
     <h2>Đăng nhập</h2>
     <form method="post" action="">
@@ -19,6 +20,7 @@ session_start();
     </form>
     <p>Bạn chưa có tài khoản? <a href="register.php">Đăng ký</a></p>
   </div>
+ 
 </body>
 </html>
 
