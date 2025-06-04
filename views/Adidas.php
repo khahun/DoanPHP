@@ -52,9 +52,11 @@ $result = mysqli_query($conn, $sql);
             <li><a href="Adidas.php">ADIDAS</a></li>
             <li><a href="Nike.php">NIKE</a></li>
             <li><a href="Puma.php">PUMA</a></li>
-            <li><a href="#">GIÀY NAM</a></li>
-            <li><a href="#">GIÀY NỮ</a></li>
-            <li><a href="#">GIÀY ĐÔI</a></li>
+            <li><a href="GiayNam.php">GIÀY NAM</a></li>
+            <li><a href="GiayNu.php">GIÀY NỮ</a></li>
+             <li><a href="GiayTE.php">GIÀY TRẺ EM</a></li>
+            <li><a href="GiayDoi.php">GIÀY ĐÔI</a></li>
+           
         </ul>
     </div>
 

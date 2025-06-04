@@ -115,4 +115,136 @@ function closeModal(id) {
   document.body.style.overflow = "auto";
 }
 
+// Đăng nhập/ Đăng ký
 
+function openLogin() {
+  closeModal('registerModal');
+  document.getElementById('loginModal').style.display = 'block';
+}
+
+function openRegister() {
+  closeModal('loginModal');
+  document.getElementById('registerModal').style.display = 'block';
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+function switchToRegister() {
+  closeModal('loginModal');
+  openRegister();
+}
+function switchToZalo() {
+  closeModal('loginModal');
+  openZalo();
+}
+
+function switchToLogin() {
+  closeModal('registerModal');
+  openLogin();
+}
+function switchToLogin() {
+  closeModal('zaloModal');
+  openLogin();
+}
+
+// Đóng modal khi click bên ngoài
+window.onclick = function(event) {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = "none";
+  }
+}
+
+function openZalo() {
+  closeModal('loginModal');
+  closeModal('registerModal');
+  document.getElementById('zaloModal').style.display = 'block';
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+    const endDate = new Date("2025-06-30T23:59:59").getTime();
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+
+    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+        console.error("Countdown elements not found in the DOM.");
+        return;
+    }
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance < 0) {
+            document.querySelector(".countdown").innerHTML = "<h2>ĐÃ HẾT GIỜ!</h2>";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+
+        daysEl.textContent = days.toString().padStart(2, '0');
+        hoursEl.textContent = hours.toString().padStart(2, '0');
+        minutesEl.textContent = minutes.toString().padStart(2, '0');
+        secondsEl.textContent = seconds.toString().padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+});
+
+
+function showNotification(data) {
+  const container = document.getElementById("sale-notifications");
+
+  const notif = document.createElement("div");
+  notif.className = "notification";
+  notif.innerHTML = `
+    <img src="${data.image_url}" alt="SP">
+    <div class="text">
+      <strong>${data.phone}</strong> đã vừa mua<br>
+      ${data.product_name}<br>
+      <small>${data.time}</small>
+    </div>
+  `;
+
+  container.appendChild(notif);
+  setTimeout(() => notif.remove(), 6000);
+}
+
+function fetchNotification() {
+  fetch("get_notifications.php")
+    .then(res => res.json())
+    .then(data => {
+      showNotification(data);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.getElementById("scrollButton");
+
+  function updateScrollIcon() {
+    if (window.scrollY < 100) {
+      scrollBtn.innerHTML = "⬇️";
+    } else {
+      scrollBtn.innerHTML = "⬆️";
+    }
+  }
+
+  scrollBtn.addEventListener("click", () => {
+    if (window.scrollY < 100) {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+
+  window.addEventListener("scroll", updateScrollIcon);
+  updateScrollIcon();
+});

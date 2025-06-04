@@ -109,7 +109,7 @@ height: 1O0px;
 width: 100px;    
 }
 
-.flash-sale {
+.flashsale {
     color: red;
 }
 .nav-icons a i {
@@ -1012,4 +1012,224 @@ html, body {
     margin-top: 6px;
     font-size: 14px;
     color: #555;
+}
+/* USER MENU ICON */
+.user-menu {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.user-menu i {
+  color: #333;
+  
+}
+
+.user-menu:hover i {
+  transform: scale(1.1);
+  color: #007bff;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 10px 0;
+  min-width: 220px;
+  z-index: 1000;
+  animation: dropdownFade 0,3s ease-in-out;
+}
+
+.user-menu:hover .user-dropdown {
+  display: block;
+}
+
+.user-dropdown button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  text-align: left;
+  font-size: 15px;
+  color: #333;
+  transition: background 1s, color 1s;
+}
+
+.user-dropdown button:hover {
+  background-color: #f0f4ff;
+  color: #007bff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* MODAL POPUP STYLE */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {transform: translateY(-30px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Input style */
+.modal-content input {
+  width: 97%;
+  padding: 6px;
+  margin: 10px 0 ;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button style */
+.modal-content button {
+  background-color: orange;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: darkorange;
+}
+
+.auth-switch {
+  color: #000;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.auth-switch a {
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.wrapper1 {
+    text-align: center;
+    padding: 30px 0;
+       background-color: firebrick;
+}
+
+.flash-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+ 
+}
+
+.icon {
+    color: orange;
+}
+
+.subtitle {
+    background-color: black;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.countdown {
+    background-color: yellow;
+    color: black;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px 20px;
+    margin-top: -10px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    text-align: center;
+    min-width: 100px;
+}
+
+.number {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.label {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.scroll-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0.7;
+  transition: opacity 0.3s, background-color 0.3s;
+  z-index: 9999;
+}
+
+.scroll-button:hover {
+  opacity: 1;
+  background-color: #444;
 }

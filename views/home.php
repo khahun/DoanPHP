@@ -23,7 +23,8 @@ $km_result = $conn->query($km_sql);
 <?php include '../includes/header.php'; ?>
 <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/js/script.js" defer></script>
+<script src="../assets/js/script.js"></script>
+<div id="sale-notifications" class="notification-wrapper"></div>
 <div class="hero-section">
 
     <img src="../assets/images/banner.jpg" alt="Banner chính" class="hero-banner">
@@ -37,6 +38,10 @@ $km_result = $conn->query($km_sql);
     <div class="category">
         <p>GIÀY NỮ</p>
        <a href="GiayNu.php"><button>XEM MẪU</button></a>
+    </div>
+     <div class="category">
+        <p>GIÀY TRẺ EM</p>
+        <a href="GiayTE.php"><button>XEM MẪU</button></a>
     </div>
     <div class="category">
         <p>GIÀY ĐÔI</p>
@@ -238,7 +243,9 @@ if ($km_result && $km_result->num_rows > 0) {
 </ul>
   </div>
 </div>
-<script src="../assets/script.js"></script>
+<button id="scrollButton" class="scroll-button" title="Cuộn">⬆️</button>
+
+<script src="../assets/js/script.js"></script>
 <?php include '../includes/footer.php'; ?>
 </body>
 </html>
