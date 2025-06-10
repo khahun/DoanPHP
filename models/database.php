@@ -1,7 +1,7 @@
 <?php
 // kết nối database 
     $servername = "localhost";
-    $database = "shopgiaydep_sql";
+    $database = "shopgiaydep";
     $username = "root";
     $password = "";
 

@@ -1,53 +1,56 @@
 <link rel="stylesheet" href="style.css">
-<footer>
+
+<footer class="footer">
   <div class="footer-container">
-    <!-- Logo + Thông tin cửa hàng -->
+    <!-- Cột 1: Logo + Thông tin -->
     <div class="footer-column">
-      <img src="../assets/images/logo.jpg" alt="XShop Logo" class="footer-logo">
-      <p><strong>Hệ thống giày thể thao số 1 TP.Hồ Chí Minh</strong></p>
-      <p>Hotline: <a href="tel:0975671080">097.567.1080</a></p>
-      <p>Store 1: 732 Tân Kỳ Tân Qúy, Bình Tân, Tp.Hồ Chí Minh </p>
-      <p>Store 2: 28 Ngô Quang Huy, Thủ Đức, Tp.Hồ Chí Minh</p>
+      <img src="../assets/images/logoweb.jpg" alt="XShop Logo" class="footer-logo">
+      <p class="footer-tagline">Hệ thống giày thể thao số 1 TP.Hồ Chí Minh</p>
+      <p><strong>Hotline:</strong> <a href="tel:0975671080">097.567.1080</a></p>
+      <p>Store 1: 732 Tân Kỳ Tân Quý, Bình Tân</p>
+      <p>Store 2: 28 Ngô Quang Huy, Thủ Đức</p>
     </div>
-    <!-- Cột Hỗ trợ -->
+
+    <!-- Cột 2: Hỗ trợ -->
     <div class="footer-column">
       <h4>HỖ TRỢ</h4>
       <ul>
-        <li><a href="#">7 cách bảo quản giày thể thao tốt nhất</a></li>
-        <li><a href="#">Giữ “phong độ” cho</a></li>
-        <li><a href="#">Sneaker trắng ra sao</a></li>
-        <li><a href="#">9 kỹ thuật làm đẹp dành cho U30</a></li>
+        <li><a href="web1.php">7 cách bảo quản giày thể thao</a></li>
+        <li><a href="web2.php">Giữ “phong độ” cho sneaker</a></li>
+        <li><a href="web3.php">Cách làm sạch sneaker trắng</a></li>
+        <li><a href="web4.php">Kỹ thuật làm đẹp cho U30</a></li>
       </ul>
     </div>
 
-    <!-- Cột Thông tin -->
+    <!-- Cột 3: Thông tin -->
     <div class="footer-column">
-  <h4>THÔNG TIN</h4>
-<ul>
-  <li><a href="javascript:void(0);" onclick="openModal('modalGioiThieu')">Giới thiệu</a></li>
-  <li><a href="javascript:void(0);" onclick="openModal('modalHuongDan')">Hướng dẫn đặt hàng</a></li>
-  <li><a href="javascript:void(0);" onclick="openModal('modalBaoMat')">Bảo mật</a></li>
-  <li><a href="javascript:void(0);" onclick="openModal('modalLienHe')">Liên hệ</a></li>
-  <li><a href="javascript:void(0);" onclick="openModal('modalChinhsach')">Chính sách đổi hàng</a></li>
-  <li><a href="javascript:void(0);" onclick="openModal('modalHethong')">Hệ thống cửa hàng</a></li>
-</ul>
-</div>
+      <h4>THÔNG TIN</h4>
+      <ul>
+        <li><a href="javascript:void(0);" onclick="openModal('modalGioiThieu')">Giới thiệu</a></li>
+        <li><a href="javascript:void(0);" onclick="openModal('modalHuongDan')">Hướng dẫn đặt hàng</a></li>
+        <li><a href="javascript:void(0);" onclick="openModal('modalBaoMat')">Bảo mật</a></li>
+        <li><a href="javascript:void(0);" onclick="openModal('modalLienHe')">Liên hệ</a></li>
+        <li><a href="javascript:void(0);" onclick="openModal('modalChinhsach')">Chính sách đổi hàng</a></li>
+        <li><a href="javascript:void(0);" onclick="openModal('modalHethong')">Hệ thống cửa hàng</a></li>
+      </ul>
+    </div>
 
-
-    <!-- Facebook Fanpage -->
+    <!-- Cột 4: Facebook -->
     <div class="footer-column">
       <h4>GenZSHOP TRÊN FACEBOOK</h4>
-      <iframe 
-        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fxshop02&tabs=timeline&width=250&height=200&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-        width="250" height="200" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-        allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
+      <div class="fb-container">
+        <iframe 
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fxshop02&tabs=timeline&width=250&height=200"
+          width="250" height="200" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
+      </div>
     </div>
   </div>
 
   <!-- Bản quyền -->
   <div class="footer-bottom">
-    <p>Bản quyền © 2018 - 2025 Giày xShop. Bảo lưu mọi quyền.</p>
-    <p>🚚 <a href="#">Chính sách giao hàng</a></p>
+    <p>Bản quyền ©
+<p>🚚 <a href="#">Chính sách giao hàng</a></p>
   </div>
-</footer>
+</footer> 

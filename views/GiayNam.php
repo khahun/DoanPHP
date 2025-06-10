@@ -47,12 +47,26 @@ $result = mysqli_query($conn, $sql);
     <div class="sidebar">
         <h3>Danh mục sản phẩm</h3>
         <ul>
-            <li><a href="Adidas.php">ADIDAS</a></li>
-            <li><a href="Nike.php">NIKE</a></li>
-            <li><a href="Puma.php">PUMA</a></li>
-            <li><a href="GiayNam.php">GIÀY NAM</a></li>
-            <li><a href="GiayNu.php">GIÀY NỮ</a></li>
-            <li><a href="GiayDoi.php">GIÀY ĐÔI</a></li>
+              <li><a href="Adidas.php">ADIDAS</a></li>
+        <li><a href="Nike.php">NIKE</a></li>
+        <li><a href="Puma.php">PUMA</a></li>
+        <li><a href="Vans.php">VANS</a></li>
+        <li><a href="Converse.php">CONVERSE</a></li>
+        <li><a href="Fila.php">FILA</a></li>
+        <li><a href="Reebok.php">REEBOK</a></li>
+        <li><a href="GiayNam.php">GIÀY NAM</a></li>
+        <li><a href="GiayNu.php">GIÀY NỮ</a></li>
+        <li><a href="GiayDoi.php">GIÀY ĐÔI</a></li>
+         <li><a href="thanhly.php">THANH LÝ</a></li>
+         <li><a href="FlashSale.php">FLASHSALE</a></li>
+        <li class="has-submenu">
+           <a href="#">DÉP</a>
+              <ul class="submenu">
+                <li><a href="DépAdidas.php">DÉP ADIDAS</a></li>
+                <li><a href="DépNike.php">DÉP NIKE</a></li>
+               <li><a href="DépPuma.php">DÉP PUMA</a></li>
+              </ul>
+        </li>
         </ul>
     </div>
     <div class="main-content">
@@ -96,6 +110,36 @@ if ($result->num_rows > 0) {
 </div>
     </div>
 </div>
+<button id="scrollButton" class="scroll-button" title="Cuộn">⬆️</button>
+<script>
+const scrollButton = document.getElementById("scrollButton");
+
+window.addEventListener("scroll", () => {
+  // Hiện nút khi cuộn xuống quá 200px
+  if (window.scrollY > 200) {
+    scrollButton.style.display = "block";
+
+    // Đổi biểu tượng: nếu đang gần cuối -> nút cuộn lên
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 100) {
+      scrollButton.textContent = "⬆️"; // Cuộn lên đầu
+    } else {
+      scrollButton.textContent = "⬇️"; // Cuộn xuống cuối
+    }
+  } else {
+    scrollButton.style.display = "none";
+  }
+});
+
+scrollButton.addEventListener("click", () => {
+  // Nếu đang ở gần cuối trang -> cuộn lên đầu
+  if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 100) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  }
+});
+</script>
+<?php include '../views/modalsshop.php'; ?>
 <?php include '../includes/footer.php'; ?>
 </body>
 </html>

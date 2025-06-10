@@ -1,6 +1,6 @@
 <?php
 // Kết nối CSDL
-$conn = new mysqli("localhost", "root", "", "shopgiaydep_sql");
+$conn = new mysqli("localhost", "root", "", "shopgiaydep");
 $conn->set_charset("utf8");
 
 $masp = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -62,6 +62,7 @@ foreach ($images as $img) {
 }
 ?>
 </div>
+
         </div>
         <div class="right-column">
             <h1><?= $product['TenSP'] ?></h1>
@@ -92,16 +93,66 @@ foreach ($images as $img) {
   <a href="javascript:void(0);" onclick="openSizeGuide()" style="color: red; border: 2px solid red; padding: 5px 10px; text-decoration: none; border-radius: 5px;">HD cách chọn size giày</a>
 </div>
         </div>
+        
     </div>
-   
-
-    <?php include '../includes/footer.php'; ?>
 <div id="sizeGuideModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeSizeGuide()">&times;</span>
     <img src="../assets/images/huongdanchonsize.png" alt="Bảng đo size giày" style="width:100%;">
   </div>
 </div>
+<div class="main-content">
+    <div class="review-container">
+<div class="product-review">
+  <h3>Đánh giá sản phẩm</h3>
+  
+  <!-- Hiển thị số sao trung bình -->
+  <div class="star-rating">
+    <span class="star filled">★</span>
+    <span class="star filled">★</span>
+    <span class="star filled">★</span>
+    <span class="star filled">★</span>
+    <span class="star">★</span>
+    <span class="average">4.0/5</span>
+  </div>
+
+  <!-- Danh sách bình luận -->
+  <div class="review-list">
+    <div class="review">
+      <strong>Nguyễn Văn A</strong>
+      <div class="stars">★★★★☆</div>
+      <p>Giày rất êm và đúng size, giao hàng nhanh.</p>
+    </div>
+    <div class="review">
+      <strong>Trần Thị B</strong>
+      <div class="stars">★★★★★</div>
+      <p>Đôi này đi làm cực kỳ lịch sự mà vẫn thoải mái.</p>
+    </div>
+  </div>
+
+  <!-- Form thêm bình luận -->
+  <form class="review-form">
+    <label for="name">Tên:</label><br>
+    <input type="text" id="name" required><br>
+    
+    <label for="rating">Đánh giá:</label><br>
+    <select id="rating" required>
+      <option value="5">5 sao</option>
+      <option value="4">4 sao</option>
+      <option value="3">3 sao</option>
+      <option value="2">2 sao</option>
+      <option value="1">1 sao</option>
+    </select><br>
+    
+    <label for="comment">Bình luận:</label><br>
+    <textarea id="comment" rows="3" required></textarea><br>
+    
+    <button type="submit">Gửi đánh giá</button>
+  </form>
+  </div>
+</div>
 <script src="../assets/js/script.js"></script>
+<?php include '../views/modalsshop.php'; ?>
+<?php include '../includes/footer.php'; ?>
 </body>
 </html>
