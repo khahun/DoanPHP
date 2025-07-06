@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 include_once __DIR__ . '/../models/database.php';
 
 // Lấy các tham số từ URL
@@ -53,12 +54,45 @@ switch ($sort) {
 }
 
 // Thực thi truy vấn
+=======
+include_once '../models/database.php';
+
+// Lấy filter từ dropdown
+$filter = $_GET['filter'] ?? '';
+
+// Xây dựng câu truy vấn cơ bản
+$sql = "SELECT MaSP, TenSP, DonGia, AnhNen FROM sanpham WHERE 1";
+
+// Áp dụng bộ lọc
+switch ($filter) {
+    case 'price_asc':
+        $sql .= " ORDER BY DonGia ASC";
+        break;
+    case 'price_desc':
+        $sql .= " ORDER BY DonGia DESC";
+        break;
+    case 'name_asc':
+        $sql .= " ORDER BY TenSP ASC";
+        break;
+    case 'name_desc':
+        $sql .= " ORDER BY TenSP DESC";
+        break;
+    case 'new':
+        $sql .= " ORDER BY MaSP DESC"; // Giả sử MaSP tăng dần là mới
+        break;
+    default:
+        $sql .= " ORDER BY MaSP DESC";
+}
+
+$sql .= " LIMIT 30";
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 $result = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <title>Giày Nam</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -71,11 +105,25 @@ $result = mysqli_query($conn, $sql);
     <img src="../assets/images/banerGD.jpg" alt="Banner chính" class="hero-banner">
 </div>
 
+=======
+    <title>GiayNam</title>
+</head>
+<body>
+<?php include '../includes/header.php'; ?>
+<link rel="stylesheet" href="../assets/css/style.css">
+<div class="hero-section">
+    <img src="../assets/images/bannerGNa.jpg" alt="Banner chính" class="hero-banner">
+</div>
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 <div class="container">
     <div class="sidebar">
         <h3>Danh mục sản phẩm</h3>
         <ul>
+<<<<<<< HEAD
            <li><a href="Adidas.php">ADIDAS</a></li>
+=======
+              <li><a href="Adidas.php">ADIDAS</a></li>
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
         <li><a href="Nike.php">NIKE</a></li>
         <li><a href="Puma.php">PUMA</a></li>
         <li><a href="Vans.php">VANS</a></li>
@@ -83,7 +131,11 @@ $result = mysqli_query($conn, $sql);
         <li><a href="Fila.php">FILA</a></li>
         <li><a href="Reebok.php">REEBOK</a></li>
         <li><a href="GiayNam.php">GIÀY NAM</a></li>
+<<<<<<< HEAD
         <li><a href="GiayNu.php">GIÀY NỮ</a></li>  
+=======
+        <li><a href="GiayNu.php">GIÀY NỮ</a></li>
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
         <li><a href="GiayDoi.php">GIÀY ĐÔI</a></li>
          <li><a href="thanhly.php">THANH LÝ</a></li>
          <li><a href="FlashSale.php">FLASHSALE</a></li>
@@ -98,6 +150,7 @@ $result = mysqli_query($conn, $sql);
         </ul>
     </div>
     <div class="main-content">
+<<<<<<< HEAD
         <!-- Form lọc sản phẩm -->
         <form method="GET" action="" class="filter-form">
             <div class="filter-group search-group">
@@ -304,17 +357,71 @@ $result = mysqli_query($conn, $sql);
 }
 </style>
 
+=======
+        <!-- Dropdown lọc sản phẩm -->
+        <div class="filter-bar">
+            <form method="get">
+                <label for="filter">Sắp xếp sản phẩm:</label>
+                <select name="filter" id="filter" onchange="this.form.submit()">
+                    <option value="">-- Chọn --</option>
+                    <option value="new" <?= ($filter == 'new') ? 'selected' : '' ?>>Mới nhất</option>
+                    <option value="name_asc" <?= ($filter == 'name_asc') ? 'selected' : '' ?>>Tên A-Z</option>
+                    <option value="name_desc" <?= ($filter == 'name_desc') ? 'selected' : '' ?>>Tên Z-A</option>
+                    <option value="price_asc" <?= ($filter == 'price_asc') ? 'selected' : '' ?>>Giá: thấp đến cao</option>
+                    <option value="price_desc" <?= ($filter == 'price_desc') ? 'selected' : '' ?>>Giá: cao xuống thấp</option>
+                </select>
+            </form>
+        </div>
+
+        <!-- Danh sách sản phẩm -->
+           <div class="product-list">
+<?php
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $tensp = htmlspecialchars($row['TenSP']);
+        $gia = number_format($row['DonGia']) . " VNĐ";
+        $anh = !empty($row['AnhNen']) ? "../assets/images/" . $row['AnhNen'] : "../assets/images/no-image.png";
+?>
+    <div class="product-card">
+        <a href="product_detail.php?id=<?= $row['MaSP'] ?>">
+            <img src="<?= $anh ?>" alt="<?= $tensp ?>">
+            <h3><?= $tensp ?></h3>
+        </a>
+        <p class="price">Giá: <?= $gia ?></p>
+    </div>
+<?php
+    }
+} else {
+    echo "<p>Không có sản phẩm nào để hiển thị.</p>";
+}
+?>
+</div>
+    </div>
+</div>
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 <button id="scrollButton" class="scroll-button" title="Cuộn">⬆️</button>
 <script>
 const scrollButton = document.getElementById("scrollButton");
 
 window.addEventListener("scroll", () => {
+<<<<<<< HEAD
   if (window.scrollY > 200) {
     scrollButton.style.display = "block";
     if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 100) {
       scrollButton.textContent = "⬆️";
     } else {
       scrollButton.textContent = "⬇️";
+=======
+  // Hiện nút khi cuộn xuống quá 200px
+  if (window.scrollY > 200) {
+    scrollButton.style.display = "block";
+
+    // Đổi biểu tượng: nếu đang gần cuối -> nút cuộn lên
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 100) {
+      scrollButton.textContent = "⬆️"; // Cuộn lên đầu
+    } else {
+      scrollButton.textContent = "⬇️"; // Cuộn xuống cuối
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
     }
   } else {
     scrollButton.style.display = "none";
@@ -322,6 +429,10 @@ window.addEventListener("scroll", () => {
 });
 
 scrollButton.addEventListener("click", () => {
+<<<<<<< HEAD
+=======
+  // Nếu đang ở gần cuối trang -> cuộn lên đầu
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
   if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 100) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   } else {
@@ -329,9 +440,14 @@ scrollButton.addEventListener("click", () => {
   }
 });
 </script>
+<<<<<<< HEAD
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <?php include __DIR__ . '/../views/modalsshop.php'; ?>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
+=======
+<?php include '../views/modalsshop.php'; ?>
+<?php include '../includes/footer.php'; ?>
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 </body>
 </html>

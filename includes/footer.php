@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <link rel="stylesheet" href="../assets/css/style.css">
+=======
+<link rel="stylesheet" href="style.css">
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 
 <footer class="footer">
   <div class="footer-container">
@@ -16,7 +20,11 @@
       <h4>HỖ TRỢ</h4>
       <ul>
         <li><a href="web1.php">7 cách bảo quản giày thể thao</a></li>
+<<<<<<< HEAD
         <li><a href="web2.php">Giữ "phong độ" cho sneaker</a></li>
+=======
+        <li><a href="web2.php">Giữ “phong độ” cho sneaker</a></li>
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
         <li><a href="web3.php">Cách làm sạch sneaker trắng</a></li>
         <li><a href="web4.php">Kỹ thuật làm đẹp cho U30</a></li>
       </ul>

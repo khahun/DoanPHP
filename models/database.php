@@ -18,10 +18,15 @@ function selectdata($sql)
     global $conn;
     $retval = mysqli_query(  $conn ,$sql);  
     return $retval;
+<<<<<<< HEAD
+=======
+    mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // login 
 function checklogin($email,$password){
     global $conn;
+<<<<<<< HEAD
     $escaped_email = mysqli_real_escape_string($conn, $email);
     $escaped_password = mysqli_real_escape_string($conn, $password);
     $sql="SELECT * FROM khachhang WHERE Email = '$escaped_email' AND MatKhau = '$escaped_password'";
@@ -32,6 +37,17 @@ function checklogin($email,$password){
       }else{
         return  mysqli_fetch_assoc($resulf);
       }     
+=======
+    $sql="SELECT * FROM `khachhang` WHERE Email= '$email' AND MatKhau = '$password'";
+    $resulf=mysqli_query($conn,$sql);
+    $count=mysqli_num_rows($resulf); 
+    if($count==0){
+        return false;
+      }else{
+        return $resulf;
+      }     
+    mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // -------------------------
 // ------------------------------------------ PRODUCT MODEL----------------------
@@ -46,6 +62,7 @@ function productAll(){
     }else{
       return  $resulf;
     }     
+<<<<<<< HEAD
 }
 // Lấy tất cả các size
 function getAllSizes() {
@@ -158,6 +175,9 @@ function filterProducts($filters) {
     error_log("Number of results: " . $result->num_rows);
     
     return $result;
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // lấy danh sách sản phẩn nổi bật 
 function featuredProductsL4(){
@@ -170,6 +190,10 @@ function featuredProductsL4(){
   } else {
       return $result;
   }
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 function newsProductsL4(){
   global $conn;
@@ -181,6 +205,10 @@ function newsProductsL4(){
   } else {
       return $result;
   }
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 function sellingProductsL4(){
   global $conn;
@@ -192,6 +220,10 @@ function sellingProductsL4(){
   } else {
       return $result;
   }
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 
 // lấy danh sách sản phẩm random
@@ -205,12 +237,20 @@ function product_rand(){
     }else{
       return  $resulf;
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // tìm kiếm sản phẩm 
 function product_search($key){
   global $conn;
+<<<<<<< HEAD
   $escaped_key = mysqli_real_escape_string($conn, $key);
   $sql="SELECT * FROM `sanpham` WHERE `TenSP` LIKE '%" . $escaped_key . "%' OR `MoTa` LIKE '%" . $escaped_key . "%'";
+=======
+  $sql="SELECT * FROM `sanpham` WHERE `TenSP`  LIKE N'%".$key."%' ";
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
   $resulf=mysqli_query($conn,$sql);
   $count=mysqli_num_rows($resulf);    
   if($count==0){
@@ -218,6 +258,10 @@ function product_search($key){
     }else{
       return  $resulf;
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // lấy 1 product 
 function product($id){
@@ -230,6 +274,10 @@ function product($id){
     }else{
       return  $resulf;
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // tính sản phẩm khuyến mãi
 function price_sale($id,$gia){
@@ -257,6 +305,10 @@ function price_sale($id,$gia){
   }else{
     return $gia;
   }
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // lấy  product detail
 function product_detail_color($id){
@@ -269,6 +321,10 @@ function product_detail_color($id){
     }else{
       return  $resulf;
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 function product_detail_size($id){
   global $conn;
@@ -280,6 +336,10 @@ function product_detail_size($id){
     }else{
       return  $resulf;
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 function product_detail_image($id){
   global $conn;
@@ -291,6 +351,10 @@ function product_detail_image($id){
     }else{
       return  $resulf;
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // check số lượgn prodcut
 function check_product_soluong($id,$size,$mau){
@@ -304,6 +368,10 @@ function check_product_soluong($id,$size,$mau){
     $soluongkho=mysqli_fetch_array($resulf);
     return  $soluongkho['SoLuong'];
   }     
+<<<<<<< HEAD
+=======
+mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // check phiếu giảm giá
 if (isset($_POST["functionName"])) {
@@ -324,6 +392,10 @@ function check_coupon($id){
     $coupon=mysqli_fetch_array($resulf);
     return number_format( $coupon['SoTien']);
   }     
+<<<<<<< HEAD
+=======
+mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // các bình luận product
 function product_review($id){
@@ -336,6 +408,11 @@ function product_review($id){
     }else{
       return  $resulf;
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // thêm bình luận product
 function product_addtoreview($masp,$id,$nd){
@@ -347,6 +424,10 @@ function product_addtoreview($masp,$id,$nd){
     }else{
       return  false;
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 /////// tải thêm nhiều sản phẩm với ajax
 if (isset($_POST['page'])==true) {
@@ -388,6 +469,10 @@ function categorys(){
       }else{
         return  $resulf;
       }     
+<<<<<<< HEAD
+=======
+    mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // lấy danh sách sản phẩm theo danh mục
 function product_category($id){
@@ -400,12 +485,17 @@ function product_category($id){
     }else{
       return  $resulf;
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 
 // -------------------------------------------------------------------------------
 // ------------------------------------------ card MODEL----------------------
 // xử lý đặt hàng
 
+<<<<<<< HEAD
 function insert_nguoinhan($tennn, $diachi, $sdt, $makh) {
     global $conn;
     
@@ -522,6 +612,38 @@ function order_product($tennn, $diachi, $sdt, $makh, $tt, $payment, $id_nguoinha
         error_log("Lỗi đặt hàng: " . $e->getMessage());
         return false;
     }
+=======
+function order_product($nn,$dcnn,$sdtnn,$makh,$tt){
+  global $conn;
+  $sql="INSERT INTO `hoadon`(`MaKH`,  `TinhTrang`, `TongTien`) VALUES ($makh,N'chưa duyệt',$tt)";
+  $resulf = mysqli_query($conn ,$sql); 
+  if($resulf){
+    $sql2="select MaHD from hoadon where MaKH=$makh and TongTien=$tt ORDER BY MaHD DESC limit 1";
+    $rs2=mysqli_query($conn,$sql2);
+    $kq2=mysqli_fetch_array($rs2);$mahd=$kq2['MaHD'];
+    foreach ($_SESSION['cart_product'] as $item) {
+      $DonGia = str_replace(',', '', $item['DonGia']);
+      $ttt=($item['SoLuong']* $DonGia);
+      $masp=$item['MaSP']; $sl=$item['SoLuong']; $dg=$DonGia; $mamau=$item['Mau']; $size=$item['Size'];
+      $sql3="INSERT INTO `chitiethoadon`(`MaHD`, `MaSP`, `SoLuong`, `DonGia`, `ThanhTien`, `Size`, `MaMau`) VALUES($mahd,$masp,$sl,$dg,$ttt,$size,'$mamau')";
+      $rs3=mysqli_query($conn,$sql3);
+      $sql_sl="UPDATE `chitietsanpham` SET `SoLuong`=(`SoLuong`-'$sl') WHERE `MaSP`='$masp' and `MaSize`='$size' and `MaMau`='$mamau'";
+      $rs_sl=mysqli_query($conn,$sql_sl);
+    }
+    if($rs3){
+      if($rs_sl){
+        $sql4="INSERT INTO `nguoinhan`(`MaHD`, `TenNN`, `DiaChiNN`, `SDTNN`) VALUES($mahd,'$nn','$dcnn',$sdtnn)";
+        $rs4=mysqli_query($conn,$sql4);
+        if($rs4){
+          unset($_SESSION['cart_product']);
+          return true;
+        }else{
+          return false;
+        }
+      }	
+    }
+  }
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // -------------------------------------------------------------------------------
 // ------------------------------------------ user MODEL----------------------
@@ -535,6 +657,10 @@ function newUser($name,$email,$sdt,$address,$password){
     }else{
       return false;
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // -------------------------
 // select khách hàng
@@ -548,6 +674,10 @@ function selectKH($id){
     }else{
       return mysqli_fetch_array($resulf);
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // -------------------------
 
@@ -557,6 +687,10 @@ function update_user($id,$ten,$sdt,$dc,$matkhau){
   $sql="UPDATE `khachhang` SET `TenKH`='$ten',`SDT`=$sdt,`DiaChi`='$dc',`MatKhau`='$matkhau' WHERE `MaKH`=$id";
   $resulf=mysqli_query($conn,$sql);
   return $resulf;
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // -------------------------
 // đơn hàng của khách hàng
@@ -570,6 +704,10 @@ function bill_user($id){
     }else{
       return $resulf;
     }     
+<<<<<<< HEAD
+=======
+  mysqli_close($conn);
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 // -------------------------------------------------------------------------------
 // ------------------------------------------ admin  ----------------------
@@ -584,10 +722,17 @@ function bill_detail($id){
     }else{
       return $resulf;
     }     
+<<<<<<< HEAD
 }
 
 // -------------------------------------------------------------------------------
 
+=======
+  mysqli_close($conn);
+}
+
+// -------------------------------------------------------------------------------
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 ?>
 
 

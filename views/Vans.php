@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 include_once __DIR__ . '/../models/database.php';
 
 // Lấy các tham số từ URL
@@ -47,6 +48,38 @@ switch ($sort) {
 }
 
 // Thực thi truy vấn
+=======
+include_once '../models/database.php';
+
+// Lấy filter từ dropdown
+$filter = $_GET['filter'] ?? '';
+$sql = "SELECT sp.MaSP, sp.TenSP, sp.DonGia, sp.AnhNen
+        FROM sanpham sp
+        JOIN nhacc ncc ON sp.MaNCC = ncc.MaNCC
+        WHERE ncc.TenNCC = 'VANS' AND sp.MaDM = 5";
+// Áp dụng bộ lọc
+switch ($filter) {
+    case 'price_asc':
+        $sql .= " ORDER BY sp.DonGia ASC";
+        break;
+    case 'price_desc':
+        $sql .= " ORDER BY sp.DonGia DESC";
+        break;
+    case 'name_asc':
+        $sql .= " ORDER BY sp.TenSP ASC";
+        break;
+    case 'name_desc':
+        $sql .= " ORDER BY sp.TenSP DESC";
+        break;
+    case 'new':
+        $sql .= " ORDER BY sp.MaSP DESC";
+        break;
+    default:
+        $sql .= " ORDER BY sp.MaSP DESC";
+}
+
+$sql .= " LIMIT 30";
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 $result = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>
@@ -55,6 +88,7 @@ $result = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <title>Sản phẩm Vans</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -63,13 +97,25 @@ $result = mysqli_query($conn, $sql);
 
 <div class="hero-section">
     <img src="../assets/images/bannerV.jpg" alt="Banner chính" class="hero-banner">
+=======
+</head>
+<body>
+<?php include '../includes/header.php'; ?>
+
+<div class="hero-section">
+    <img src="../assets/images/BannerV.jpg" alt="Banner chính" class="hero-banner">
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 </div>
 
 <div class="container">
     <div class="sidebar">
         <h3>Danh mục sản phẩm</h3>
         <ul>
+<<<<<<< HEAD
            <li><a href="Adidas.php">ADIDAS</a></li>
+=======
+              <li><a href="Adidas.php">ADIDAS</a></li>
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
         <li><a href="Nike.php">NIKE</a></li>
         <li><a href="Puma.php">PUMA</a></li>
         <li><a href="Vans.php">VANS</a></li>
@@ -77,7 +123,11 @@ $result = mysqli_query($conn, $sql);
         <li><a href="Fila.php">FILA</a></li>
         <li><a href="Reebok.php">REEBOK</a></li>
         <li><a href="GiayNam.php">GIÀY NAM</a></li>
+<<<<<<< HEAD
         <li><a href="GiayNu.php">GIÀY NỮ</a></li>  
+=======
+        <li><a href="GiayNu.php">GIÀY NỮ</a></li>
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
         <li><a href="GiayDoi.php">GIÀY ĐÔI</a></li>
          <li><a href="thanhly.php">THANH LÝ</a></li>
          <li><a href="FlashSale.php">FLASHSALE</a></li>
@@ -91,6 +141,7 @@ $result = mysqli_query($conn, $sql);
         </li>
         </ul>
     </div>
+<<<<<<< HEAD
     <div class="main-content">
         <!-- Form lọc sản phẩm -->
         <form method="GET" action="" class="filter-form">
@@ -304,5 +355,51 @@ scrollButton.addEventListener("click", () => {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <?php include __DIR__ . '/../views/modalsshop.php'; ?>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
+=======
+
+    <div class="main-content">
+        <!-- Dropdown lọc sản phẩm -->
+        <div class="filter-bar">
+            <form method="get">
+                <label for="filter">Sắp xếp sản phẩm:</label>
+                <select name="filter" id="filter" onchange="this.form.submit()">
+                    <option value="">-- Chọn --</option>
+                    <option value="new" <?= ($filter == 'new') ? 'selected' : '' ?>>Mới nhất</option>
+                    <option value="name_asc" <?= ($filter == 'name_asc') ? 'selected' : '' ?>>Tên A-Z</option>
+                    <option value="name_desc" <?= ($filter == 'name_desc') ? 'selected' : '' ?>>Tên Z-A</option>
+                    <option value="price_asc" <?= ($filter == 'price_asc') ? 'selected' : '' ?>>Giá: thấp đến cao</option>
+                    <option value="price_desc" <?= ($filter == 'price_desc') ? 'selected' : '' ?>>Giá: cao xuống thấp</option>
+                </select>
+            </form>
+        </div>
+
+        <!-- Danh sách sản phẩm -->
+        <div class="product-list">
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $tensp = htmlspecialchars($row['TenSP']);
+                $gia = number_format($row['DonGia']) . " VNĐ";
+                $anh = !empty($row['AnhNen']) ? "../assets/images/" . $row['AnhNen'] : "../assets/images/no-image.png";
+        ?>
+            <div class="product-card">
+                <a href="product_detail.php?id=<?= $row['MaSP'] ?>">
+                    <img src="<?= $anh ?>" alt="<?= $tensp ?>">
+                    <h3><?= $tensp ?></h3>
+                </a>
+                <p class="price">Giá: <?= $gia ?></p>
+            </div>
+        <?php
+            }
+        } else {
+            echo "<p>Không có sản phẩm nào để hiển thị.</p>";
+        }
+        ?>
+        </div>
+    </div>
+</div>
+<?php include '../views/modalsshop.php'; ?>
+<?php include '../includes/footer.php'; ?>
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 </body>
 </html>

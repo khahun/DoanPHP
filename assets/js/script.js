@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
+=======
+document.addEventListener("DOMContentLoaded", function() {
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
   const highlightText = document.getElementById('highlight-text');
   const texts = ["DEAL NGON", "BÁN CHẠY"];
   let index = 0;
@@ -44,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+<<<<<<< HEAD
 const userIcon = document.getElementById("userIcon");
 const modal = document.getElementById("authModal");
 const closeBtn = document.querySelector(".close");
@@ -65,6 +70,29 @@ registerTab.onclick = () => {
   loginForm.style.display = "none";
   registerForm.style.display = "block";
 };
+=======
+  const userIcon = document.getElementById("userIcon");
+  const modal = document.getElementById("authModal");
+  const closeBtn = document.querySelector(".close");
+  const loginTab = document.getElementById("loginTab");
+  const registerTab = document.getElementById("registerTab");
+  const loginForm = document.getElementById("loginForm");
+  const registerForm = document.getElementById("registerForm");
+
+  userIcon.onclick = () => modal.style.display = "block";
+  closeBtn.onclick = () => modal.style.display = "none";
+ 
+
+  loginTab.onclick = () => {
+    loginForm.style.display = "block";
+    registerForm.style.display = "none";
+  };
+
+  registerTab.onclick = () => {
+    loginForm.style.display = "none";
+    registerForm.style.display = "block";
+  };
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 
 function openSizeGuide() {
   document.getElementById("sizeGuideModal").style.display = "block";
@@ -87,6 +115,14 @@ window.onclick = function (event) {
   if (event.target === sizeGuideModal) {
     sizeGuideModal.style.display = "none";
   }
+<<<<<<< HEAD
+=======
+
+  // Đóng các modal có class 'modal'
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = "none";
+  }
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -125,6 +161,7 @@ function closeModal(id) {
 // Đăng nhập/ Đăng ký
 
 function openLogin() {
+<<<<<<< HEAD
   document.getElementById('loginModal').style.display = 'block';
   document.body.style.overflow = 'hidden';
 }
@@ -137,13 +174,29 @@ function openRegister() {
 function openZalo() {
   document.getElementById('zaloModal').style.display = 'block';
   document.body.style.overflow = 'hidden';
+=======
+  closeModal('registerModal');
+  document.getElementById('loginModal').style.display = 'block';
+}
+
+function openRegister() {
+  closeModal('loginModal');
+  document.getElementById('registerModal').style.display = 'block';
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 }
 
 function switchToRegister() {
   closeModal('loginModal');
   openRegister();
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 function switchToZalo() {
   closeModal('loginModal');
   openZalo();
@@ -151,10 +204,27 @@ function switchToZalo() {
 
 function switchToLogin() {
   closeModal('registerModal');
+<<<<<<< HEAD
+=======
+  openLogin();
+}
+function switchToLogin() {
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
   closeModal('zaloModal');
   openLogin();
 }
 
+<<<<<<< HEAD
+=======
+// Đóng modal khi click bên ngoài
+
+function openZalo() {
+  closeModal('loginModal');
+  closeModal('registerModal');
+  document.getElementById('zaloModal').style.display = 'block';
+}
+
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 // Đặt thời gian đích
 document.addEventListener("DOMContentLoaded", function () {
   const countdownDate = new Date("2025-06-30T23:59:00").getTime();
@@ -181,6 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.querySelector(".review-form").addEventListener("submit", function (e) {
+<<<<<<< HEAD
   e.preventDefault();
 
   const name = document.getElementById("name").value;
@@ -192,15 +263,37 @@ document.querySelector(".review-form").addEventListener("submit", function (e) {
   const newReview = document.createElement("div");
   newReview.classList.add("review");
   newReview.innerHTML = `
+=======
+    e.preventDefault();
+    
+    const name = document.getElementById("name").value;
+    const rating = document.getElementById("rating").value;
+    const comment = document.getElementById("comment").value;
+    
+    const stars = "★★★★★☆☆☆☆☆".slice(5 - rating, 10 - rating); // Xử lý sao
+
+    const newReview = document.createElement("div");
+    newReview.classList.add("review");
+    newReview.innerHTML = `
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
       <strong>${name}</strong>
       <div class="stars">${stars}</div>
       <p>${comment}</p>
     `;
+<<<<<<< HEAD
 
   document.querySelector(".review-list").prepend(newReview);
 
   this.reset();
   alert("Cảm ơn bạn đã đánh giá!");
 });
+=======
+    
+    document.querySelector(".review-list").prepend(newReview);
+    
+    this.reset();
+    alert("Cảm ơn bạn đã đánh giá!");
+  });
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 
 

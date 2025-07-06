@@ -1,7 +1,10 @@
 <?php
+<<<<<<< HEAD
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+=======
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 include_once '../models/database.php';
 
 $query = "SELECT * FROM sanpham";
@@ -15,10 +18,13 @@ ORDER BY sp.MaSP DESC
 LIMIT 50";
 $km_result = $conn->query($km_sql);
 
+<<<<<<< HEAD
 // Lấy banner hoạt động
 $banner_sql = "SELECT hinh_anh, tieu_de FROM banner WHERE trang_thai = 1 ORDER BY id DESC";
 $banner_result = $conn->query($banner_sql);
 
+=======
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -29,6 +35,7 @@ $banner_result = $conn->query($banner_sql);
 </head>
 <body>
 <?php include '../includes/header.php'; ?>
+<<<<<<< HEAD
 <!-- Multi Banner Slider -->
 <div class="multi-banner-slider">
   <button class="slider-btn prev">&#10094;</button>
@@ -118,6 +125,9 @@ setInterval(() => {
 window.addEventListener('resize', updateSlider);
 </script>
 <link rel="stylesheet" href="../assets/css/style.css">
+=======
+<link rel="stylesheet" href="/Frontend/assets/css/style.css">
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <div id="sale-notifications" class="notification-wrapper"></div>
 <button id="scrollButton" class="scroll-button" title="Cuộn">⬆️</button>
@@ -149,6 +159,14 @@ scrollButton.addEventListener("click", () => {
   }
 });
 </script>
+<<<<<<< HEAD
+=======
+<div class="hero-section">
+
+    <img src="../assets/images/banner.jpg" alt="Banner chính" class="hero-banner">
+
+</div>
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 <div class="categories">
     <div class="category">
         <p>GIÀY NAM</p>
@@ -244,7 +262,10 @@ if ($km_result && $km_result->num_rows > 0) {
 </div>
 <?php include '../views/modalsshop.php'; ?>
 <script src="../assets/js/script.js"></script>
+<<<<<<< HEAD
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+=======
+>>>>>>> 9934819e0c09fc0f54bcd0b6242e6210abb6e70a
 <?php include '../includes/footer.php'; ?>
 </body>
 </html>
